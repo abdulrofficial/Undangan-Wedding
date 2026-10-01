@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Pernikahan - Andi & Siti</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: #f8f4ef;
+  color: #4b4038;
+  line-height: 1.7;
+}
+
+section {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 32px;
+  color: #80634d;
+  margin-bottom: 25px;
+}
+
+p {
+  margin-bottom: 12px;
+}
+
+/* COVER */
+.cover {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background:
+    linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.45)),
+    url("1777829521945.png")
+    center/cover;
+  color: white;
+}
+
+.cover-content {
+  padding: 25px;
+}
+
+.cover small {
+  font-size: 17px;
+}
+
+.cover h1 {
+  font-size: 48px;
+  margin: 20px 0;
+}
+
+.cover .date {
+  font-size: 20px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: #80634d;
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn:hover {
+  opacity: .85;
+}
+
+/* MEMPELAI */
+.couple {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  margin-top: 35px;
+}
+
+.person {
+  width: 280px;
+}
+
+.person img {
+  width: 190px;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid #e5d5c5;
+}
+
+.person h3 {
+  font-size: 27px;
+  color: #80634d;
+  margin-top: 15px;
+}
+
+.parents {
+  font-size: 14px;
+  color: #776b63;
+}
+
+/* COUNTDOWN */
+.countdown-section {
+  background: #e9ded2;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.time-box {
+  background: white;
+  width: 90px;
+  padding: 15px 5px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,.08);
+}
+
+.time-box strong {
+  display: block;
+  font-size: 28px;
+  color: #80634d;
+}
+
+.time-box span {
+  font-size: 12px;
+}
+
+/* ACARA */
+.event-card {
+  background: white;
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 30px 20px;
+  border-radius: 18px;
+  box-shadow: 0 5px 20px rgba(0,0,0,.08);
+}
+
+.event-card h3 {
+  font-size: 27px;
+  color: #80634d;
+  margin-bottom: 15px;
+}
+
+/* STORY */
+.story {
+  background: #f1e9e1;
+}
+
+.story-box {
+  max-width: 650px;
+  margin: auto;
+  text-align: left;
+}
+
+.story-item {
+  margin: 25px 0;
+  padding-left: 20px;
+  border-left: 3px solid #b99b7d;
+}
+
+/* GALERI */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.gallery img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* GIFT */
+.gift-card {
+  background: white;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+/* RSVP */
+.rsvp {
+  background: #e9ded2;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 13px;
+  margin: 7px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+}
+
+textarea {
+  height: 100px;
+}
+
+/* FOOTER */
+footer {
+  background: #4b4038;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* MUSIC */
+.music-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: #80634d;
+  color: white;
+  font-size: 20px;
+  z-index: 999;
+  cursor: pointer;
+}
+
+/* ANIMASI */
+.fade {
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* HP */
+@media(max-width:600px) {
+
+  .cover h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .gallery img {
+    height: 160px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- COVER -->
+<!-- ========================= -->
+
+<section class="cover">
+
+  <div class="cover-content fade">
+
+    <small>THE WEDDING OF</small>
+
+    <h1>Abdul & Cindy</h1>
+
+    <p class="date">
+      Minggu, 20 Desember 2026
+    </p>
+
+    <p>
+      Kepada Yth.<br>
+      Bapak/Ibu/Saudara/i
+    </p>
+
+    <a href="#undangan" class="btn">
+      Buka Undangan
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- PEMBUKA -->
+<!-- ========================= -->
+
+<section id="undangan">
+
+<div class="container">
+
+<h2>Assalamu'alaikum Warahmatullahi Wabarakatuh</h2>
+
+<p>
+Dengan memohon rahmat dan ridho Allah SWT,
+kami bermaksud mengundang Bapak/Ibu/Saudara/i
+untuk hadir dalam acara pernikahan kami.
+</p>
+
+<p>
+Merupakan suatu kehormatan dan kebahagiaan
+bagi kami apabila Bapak/Ibu/Saudara/i
+berkenan hadir dan memberikan doa restu.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- MEMPELAI -->
+<!-- ========================= -->
+
+<section>
+
+<div class="container">
+
+<h2>Calon Mempelai</h2>
+
+<div class="couple">
+
+<div class="person">
+
+<img src="fotomempelai.png">
+
+<h3>Abdul Rahman</h3>
+
+<p>Putra dari</p>
+
+<p class="parents">
+Bapak Ahmad & Ibu Aminah
+</p>
+
+</div>
+
+
+<div class="person">
+
+<img src="fotomempelaiwanita.jpg">
+<h3>Cindy</h3>
+
+<p>Putri dari</p>
+
+<p class="parents">
+Bapak Budi & Ibu Fatimah
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- COUNTDOWN -->
+<!-- ========================= -->
+
+<section class="countdown-section">
+
+<div class="container">
+
+<h2>Menuju Hari Bahagia</h2>
+
+<div class="countdown">
+
+<div class="time-box">
+<strong id="days">0</strong>
+<span>Hari</span>
+</div>
+
+<div class="time-box">
+<strong id="hours">0</strong>
+<span>Jam</span>
+</div>
+
+<div class="time-box">
+<strong id="minutes">0</strong>
+<span>Menit</span>
+</div>
+
+<div class="time-box">
+<strong id="seconds">0</strong>
+<span>Detik</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- AYAT -->
+<!-- ========================= -->
+
+<section>
+
+<div class="container">
+
+<h2>QS. Ar-Rum: 21</h2>
+
+<p>
+"Dan di antara tanda-tanda kekuasaan-Nya ialah
+Dia menciptakan untukmu pasangan hidup dari jenismu
+sendiri supaya kamu merasa tenteram kepadanya,
+dan dijadikan-Nya di antaramu rasa kasih dan sayang."
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- CERITA CINTA -->
+<!-- ========================= -->
+
+<section class="story">
+
+<div class="container">
+
+<h2>Kisah Kami</h2>
+
+<div class="story-box">
+
+<div class="story-item">
+
+<h3>2022 — Pertemuan</h3>
+
+<p>
+Berawal dari sebuah pertemuan sederhana,
+kami mulai mengenal satu sama lain.
+</p>
+
+</div>
+
+
+<div class="story-item">
+
+<h3>2023 — Mengenal Lebih Dekat</h3>
+
+<p>
+Waktu membuat kami semakin memahami,
+saling mendukung dan saling melengkapi.
+</p>
+
+</div>
+
+
+<div class="story-item">
+
+<h3>2026 — Hari Bahagia</h3>
+
+<p>
+Dengan penuh rasa syukur, kami memutuskan
+untuk melangkah ke jenjang pernikahan.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- ACARA -->
+<!-- ========================= -->
+
+<section>
+
+<div class="container">
+
+<h2>Save The Date</h2>
+
+
+<div class="event-card">
+
+<h3>Akad Nikah</h3>
+
+<p>📅 Minggu, 20 Desember 2026</p>
+
+<p>⏰ 08.00 WIB - selesai</p>
+
+<p>
+📍 Kediaman Mempelai Wanita
+</p>
+
+<a
+class="btn"
+target="_blank"
+href="https://maps.app.goo.gl/zV3gWrjwQKmLgTyR8?g_st=ac">
+Lihat Lokasi
+</a>
+
+</div>
+
+
+<div class="event-card">
+
+<h3>Resepsi</h3>
+
+<p>📅 Minggu, 20 Desember 2026</p>
+
+<p>⏰ 11.00 WIB - 14.00 WIB</p>
+
+<p>
+📍 Gedung Serbaguna
+</p>
+
+<a
+class="btn"
+target="_blank"
+href="https://maps.app.goo.gl/zV3gWrjwQKmLgTyR8?g_st=ac">
+Google Maps
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- GALERI -->
+<!-- ========================= -->
+
+<section>
+
+<div class="container">
+
+<h2>Galeri Kami</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=700&q=80">
+
+<img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=700&q=80">
+
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80">
+
+<img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=700&q=80">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- GIFT -->
+<!-- ========================= -->
+
+<section>
+
+<div class="container">
+
+<h2>Wedding Gift</h2>
+
+<p>
+Doa restu Anda merupakan hadiah terindah bagi kami.
+Namun apabila ingin memberikan tanda kasih,
+dapat melalui:
+</p>
+
+
+<div class="gift-card">
+
+<h3>Bank BCA</h3>
+
+<p>
+<strong>1234567890</strong>
+</p>
+
+<p>
+a.n. Andi Pratama
+</p>
+
+<button
+class="btn"
+onclick="copyRekening()">
+Salin Nomor Rekening
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- RSVP -->
+<!-- ========================= -->
+
+<section class="rsvp">
+
+<div class="container">
+
+<h2>Konfirmasi Kehadiran</h2>
+
+<p>
+Silakan konfirmasi kehadiran melalui WhatsApp.
+</p>
+
+<input
+id="nama"
+type="text"
+placeholder="Nama Anda">
+
+<textarea
+id="pesan"
+placeholder="Contoh: InsyaAllah hadir"></textarea>
+
+<button
+class="btn"
+onclick="kirimWA()">
+Kirim Konfirmasi
+</button>
+
+</div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- PENUTUP -->
+<!-- ========================= -->
+
+<section>
+
+<div class="container">
+
+<h2>Terima Kasih</h2>
+
+<p>
+Merupakan kebahagiaan bagi kami apabila
+Bapak/Ibu/Saudara/i dapat hadir dan
+memberikan doa restu.
+</p>
+
+<p>
+Wassalamu'alaikum Warahmatullahi Wabarakatuh
+</p>
+
+<br>
+
+<h3>
+Andi & Siti
+</h3>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>
+© 2026 Andi & Siti
+</p>
+
+<p>
+Made with ❤️
+</p>
+
+</footer>
+
+
+<!-- ========================= -->
+<!-- MUSIK -->
+<!-- ========================= -->
+
+<audio id="musik" loop>
+<source src="Tiara Andini, Arsy Widianto - Lagu Pernikahan Kita.mp3" type="audio/mpeg">
+</audio>
+
+<button
+class="music-button"
+onclick="toggleMusic()">
+♫
+</button>
+
+
+<script>
+
+/* =========================
+COUNTDOWN
+========================= */
+
+const tanggalNikah =
+new Date("December 20, 2026 08:00:00").getTime();
+
+setInterval(function() {
+
+const sekarang = new Date().getTime();
+
+const jarak = tanggalNikah - sekarang;
+
+const hari =
+Math.floor(jarak / (1000 * 60 * 60 * 24));
+
+const jam =
+Math.floor((jarak % (1000 * 60 * 60 * 24))
+/ (1000 * 60 * 60));
+
+const menit =
+Math.floor((jarak % (1000 * 60 * 60))
+/ (1000 * 60));
+
+const detik =
+Math.floor((jarak % (1000 * 60))
+/ 1000);
+
+document.getElementById("days").innerHTML =
+hari;
+
+document.getElementById("hours").innerHTML =
+jam;
+
+document.getElementById("minutes").innerHTML =
+menit;
+
+document.getElementById("seconds").innerHTML =
+detik;
+
+}, 1000);
+
+
+/* =========================
+WHATSAPP
+========================= */
+
+function kirimWA() {
+
+const nama =
+document.getElementById("nama").value;
+
+const pesan =
+document.getElementById("pesan").value;
+
+const nomor =
+"6281234567890";
+
+const teks =
+"Halo, saya " +
+nama +
+".%0A%0A" +
+pesan +
+"%0A%0ATerima kasih.";
+
+const url =
+"https://wa.me/" +
+nomor +
+"?text=" +
+teks;
+
+window.open(url, "_blank");
+
+}
+
+
+/* =========================
+COPY REKENING
+========================= */
+
+function copyRekening() {
+
+navigator.clipboard.writeText(
+"1234567890"
+);
+
+alert("Nomor rekening berhasil disalin.");
+
+}
+
+
+/* =========================
+MUSIK
+========================= */
+
+const musik =
+document.getElementById("musik");
+
+let playing = false;
+
+function toggleMusic() {
+
+if (playing) {
+
+musik.pause();
+
+playing = false;
+
+} else {
+
+musik.play();
+
+playing = true;
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
